@@ -18,6 +18,8 @@ const buttonVariants = cva(
           "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
+        instagram: "bg-gradient-instagram text-white shadow-instagram hover:shadow-2xl transition-all duration-300 ease-bounce border-0",
+        generate: "bg-gradient-instagram text-white shadow-instagram hover:scale-105 transition-all duration-300 ease-bounce",
       },
       size: {
         default: "h-10 px-4 py-2",
