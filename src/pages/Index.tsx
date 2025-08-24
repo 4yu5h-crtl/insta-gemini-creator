@@ -51,10 +51,10 @@ const Index = () => {
             <Instagram className="w-10 h-10 text-white" />
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Artisan Content Generator
+            Digital Marketing for Artisans
           </h1>
           <p className="text-xl text-white/90 max-w-2xl mx-auto leading-relaxed">
-            Upload your handmade products and let AI create compelling Instagram posts that showcase your craftsmanship and attract customers.
+            Upload your handmade products and get SEO-optimized, conversion-focused Instagram content that drives sales and grows your artisan business.
           </p>
         </div>
       </header>
@@ -73,7 +73,7 @@ const Index = () => {
                 <h2 className="text-2xl font-bold">Upload Your Product</h2>
               </div>
               <p className="text-muted-foreground mb-4">
-                Upload a photo of your handmade product. We'll automatically focus on your craft by removing distracting backgrounds.
+                Upload a photo of your handmade product. We'll focus on your craft and create SEO-optimized marketing content that converts browsers into buyers.
               </p>
               <ImageUpload
                 onImageSelect={handleImageSelect}
@@ -93,11 +93,11 @@ const Index = () => {
               className="text-lg px-12 py-4 h-auto"
             >
               <Wand2 className="w-6 h-6 mr-3" />
-              Generate Product Post
+              Generate Marketing Content
               <Sparkles className="w-6 h-6 ml-3" />
             </Button>
             <p className="text-sm text-muted-foreground mt-4">
-              AI will analyze your product and create compelling sales content that highlights your craftsmanship
+              AI will create SEO-optimized captions with conversion-focused CTAs, trending keywords, and engagement hooks
             </p>
           </div>
 
@@ -123,7 +123,7 @@ const Index = () => {
       <footer className="bg-muted/50 py-8 mt-16">
         <div className="container mx-auto px-6 text-center">
           <p className="text-muted-foreground">
-            Powered by Google Gemini AI • Perfect for artisans showcasing their handmade creations
+            Powered by Google Gemini AI • SEO-optimized content that converts and grows your artisan business
           </p>
         </div>
       </footer>

@@ -19,27 +19,43 @@ export async function generateInstagramPost(
     const imageData = await fileToGenerativePart(imageFile);
 
     const prompt = `
-    Analyze this product/craft image from an artisan's perspective and generate a compelling Instagram post for selling/showcasing this handmade item:
-    
-    Focus on:
-    - The craftsmanship and artistry
-    - Materials used and techniques
-    - Unique features and design elements
-    - Target audience appeal
-    - Selling points and value proposition
-    
-    Generate:
-    1. A catchy product title (max 60 characters) - focus on what makes it special
-    2. An engaging sales caption (2-3 sentences) - highlight craftsmanship, uniqueness, and appeal to potential buyers
-    3. 5-8 relevant hashtags - mix of craft-specific, product-specific, and popular artisan/handmade hashtags
-    
-    Write in a warm, authentic artisan voice that showcases passion for the craft while appealing to customers.
-    
-    Return the response in this exact JSON format:
+    Analyze this handmade product image and create SEO-optimized, digitally marketized Instagram content for maximum reach and sales conversion:
+
+    DIGITAL MARKETING FOCUS:
+    - Use trending keywords and SEO-friendly terms
+    - Include strategic call-to-actions (CTAs)
+    - Apply psychological triggers (scarcity, social proof, FOMO)
+    - Optimize for Instagram algorithm engagement
+    - Target ideal customer personas
+    - Include conversion-focused language
+
+    CONTENT REQUIREMENTS:
+    1. **TITLE** (45-60 chars): SEO-optimized product title with trending keywords
+    2. **CAPTION** (3-4 sentences): Digital marketing optimized with:
+       - Hook in first line to stop scrolling
+       - Value proposition highlighting uniqueness
+       - Emotional connection and storytelling
+       - Strong CTA (DM, link in bio, save post, etc.)
+       - Strategic keywords naturally integrated
+    3. **HASHTAGS** (8-15 mix): Blend of:
+       - High-volume trending hashtags (#handmade #etsy)
+       - Niche-specific tags (#artisanmade #handcrafted)
+       - Location-based if applicable
+       - Branded/business hashtags
+       - Product-specific keywords
+
+    MARKETING PSYCHOLOGY:
+    - Create urgency or exclusivity
+    - Use social proof language
+    - Target pain points and desires
+    - Include sensory descriptions
+    - Appeal to lifestyle aspirations
+
+    Return in this exact JSON format:
     {
-      "title": "Your catchy product title here",
-      "caption": "Your engaging sales caption here",
-      "hashtags": ["hashtag1", "hashtag2", "hashtag3", "hashtag4", "hashtag5"]
+      "title": "SEO-optimized product title with keywords",
+      "caption": "Digital marketing optimized caption with hooks, value props, emotion, and strong CTA",
+      "hashtags": ["trending1", "niche2", "seo3", "conversion4", "lifestyle5", "artisan6", "handmade7", "business8"]
     }
     `;
 
