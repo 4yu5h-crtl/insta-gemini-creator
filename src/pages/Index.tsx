@@ -3,14 +3,12 @@ import { Sparkles, Instagram, Wand2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import ImageUpload from '@/components/ImageUpload';
-import DescriptionInput from '@/components/DescriptionInput';
 import GeneratedContent from '@/components/GeneratedContent';
 import { generateInstagramPost, type InstagramPostData } from '@/lib/gemini';
 import { toast } from 'sonner';
 
 const Index = () => {
   const [selectedImage, setSelectedImage] = useState<File | null>(null);
-  const [description, setDescription] = useState('');
   const [generatedContent, setGeneratedContent] = useState<InstagramPostData | null>(null);
   const [isGenerating, setIsGenerating] = useState(false);
 
@@ -28,14 +26,9 @@ const Index = () => {
       return;
     }
 
-    if (!description.trim()) {
-      toast.error('Please add a description');
-      return;
-    }
-
     setIsGenerating(true);
     try {
-      const content = await generateInstagramPost(selectedImage, description);
+      const content = await generateInstagramPost(selectedImage);
       setGeneratedContent(content);
       toast.success('Instagram post generated successfully!');
     } catch (error) {
@@ -46,7 +39,7 @@ const Index = () => {
     }
   };
 
-  const canGenerate = selectedImage && description.trim() && !isGenerating;
+  const canGenerate = selectedImage && !isGenerating;
 
   return (
     <div className="min-h-screen bg-gradient-subtle">
@@ -61,7 +54,7 @@ const Index = () => {
             Instagram Content Generator
           </h1>
           <p className="text-xl text-white/90 max-w-2xl mx-auto leading-relaxed">
-            Upload an image, describe it with text or voice, and let AI create the perfect Instagram post with title, caption, and hashtags.
+            Upload any image and let AI instantly create the perfect Instagram post with engaging title, caption, and hashtags.
           </p>
         </div>
       </header>
@@ -87,20 +80,6 @@ const Index = () => {
             </div>
           </Card>
 
-          {/* Description Section */}
-          <div className="space-y-6">
-            <div className="flex items-center space-x-3">
-              <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
-                <span className="text-sm font-bold text-primary-foreground">2</span>
-              </div>
-              <h2 className="text-2xl font-bold">Add Description</h2>
-            </div>
-            <DescriptionInput
-              description={description}
-              onDescriptionChange={setDescription}
-            />
-          </div>
-
           {/* Generate Button */}
           <div className="text-center">
             <Button
@@ -114,6 +93,9 @@ const Index = () => {
               Generate Instagram Post
               <Sparkles className="w-6 h-6 ml-3" />
             </Button>
+            <p className="text-sm text-muted-foreground mt-4">
+              AI will analyze your image and create compelling content automatically
+            </p>
           </div>
 
           {/* Generated Content */}
@@ -121,7 +103,7 @@ const Index = () => {
             <div className="space-y-6">
               <div className="flex items-center space-x-3">
                 <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
-                  <span className="text-sm font-bold text-primary-foreground">3</span>
+                  <span className="text-sm font-bold text-primary-foreground">2</span>
                 </div>
                 <h2 className="text-2xl font-bold">Your Generated Content</h2>
               </div>

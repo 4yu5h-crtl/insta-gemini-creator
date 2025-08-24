@@ -10,8 +10,7 @@ export interface InstagramPostData {
 }
 
 export async function generateInstagramPost(
-  imageFile: File,
-  description: string
+  imageFile: File
 ): Promise<InstagramPostData> {
   try {
     const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
@@ -20,12 +19,12 @@ export async function generateInstagramPost(
     const imageData = await fileToGenerativePart(imageFile);
 
     const prompt = `
-    Analyze this image and the following description: "${description}"
-    
-    Generate a compelling Instagram post with:
+    Analyze this image in detail and generate a compelling Instagram post with:
     1. A catchy title (max 60 characters)
     2. An engaging caption (2-3 sentences, conversational tone)
     3. 5-8 relevant hashtags (popular and niche mix)
+    
+    Consider the image's mood, setting, colors, subjects, and potential story. Make the content engaging and Instagram-ready.
     
     Return the response in this exact JSON format:
     {
