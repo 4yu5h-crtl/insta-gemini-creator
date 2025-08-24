@@ -19,17 +19,26 @@ export async function generateInstagramPost(
     const imageData = await fileToGenerativePart(imageFile);
 
     const prompt = `
-    Analyze this image in detail and generate a compelling Instagram post with:
-    1. A catchy title (max 60 characters)
-    2. An engaging caption (2-3 sentences, conversational tone)
-    3. 5-8 relevant hashtags (popular and niche mix)
+    Analyze this product/craft image from an artisan's perspective and generate a compelling Instagram post for selling/showcasing this handmade item:
     
-    Consider the image's mood, setting, colors, subjects, and potential story. Make the content engaging and Instagram-ready.
+    Focus on:
+    - The craftsmanship and artistry
+    - Materials used and techniques
+    - Unique features and design elements
+    - Target audience appeal
+    - Selling points and value proposition
+    
+    Generate:
+    1. A catchy product title (max 60 characters) - focus on what makes it special
+    2. An engaging sales caption (2-3 sentences) - highlight craftsmanship, uniqueness, and appeal to potential buyers
+    3. 5-8 relevant hashtags - mix of craft-specific, product-specific, and popular artisan/handmade hashtags
+    
+    Write in a warm, authentic artisan voice that showcases passion for the craft while appealing to customers.
     
     Return the response in this exact JSON format:
     {
-      "title": "Your catchy title here",
-      "caption": "Your engaging caption here",
+      "title": "Your catchy product title here",
+      "caption": "Your engaging sales caption here",
       "hashtags": ["hashtag1", "hashtag2", "hashtag3", "hashtag4", "hashtag5"]
     }
     `;

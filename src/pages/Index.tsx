@@ -51,10 +51,10 @@ const Index = () => {
             <Instagram className="w-10 h-10 text-white" />
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Instagram Content Generator
+            Artisan Content Generator
           </h1>
           <p className="text-xl text-white/90 max-w-2xl mx-auto leading-relaxed">
-            Upload any image and let AI instantly create the perfect Instagram post with engaging title, caption, and hashtags.
+            Upload your handmade products and let AI create compelling Instagram posts that showcase your craftsmanship and attract customers.
           </p>
         </div>
       </header>
@@ -70,8 +70,11 @@ const Index = () => {
                 <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
                   <span className="text-sm font-bold text-primary-foreground">1</span>
                 </div>
-                <h2 className="text-2xl font-bold">Upload Your Image</h2>
+                <h2 className="text-2xl font-bold">Upload Your Product</h2>
               </div>
+              <p className="text-muted-foreground mb-4">
+                Upload a photo of your handmade product. We'll automatically focus on your craft by removing distracting backgrounds.
+              </p>
               <ImageUpload
                 onImageSelect={handleImageSelect}
                 selectedImage={selectedImage}
@@ -90,11 +93,11 @@ const Index = () => {
               className="text-lg px-12 py-4 h-auto"
             >
               <Wand2 className="w-6 h-6 mr-3" />
-              Generate Instagram Post
+              Generate Product Post
               <Sparkles className="w-6 h-6 ml-3" />
             </Button>
             <p className="text-sm text-muted-foreground mt-4">
-              AI will analyze your image and create compelling content automatically
+              AI will analyze your product and create compelling sales content that highlights your craftsmanship
             </p>
           </div>
 
@@ -120,7 +123,7 @@ const Index = () => {
       <footer className="bg-muted/50 py-8 mt-16">
         <div className="container mx-auto px-6 text-center">
           <p className="text-muted-foreground">
-            Powered by Google Gemini AI • Create engaging Instagram content effortlessly
+            Powered by Google Gemini AI • Perfect for artisans showcasing their handmade creations
           </p>
         </div>
       </footer>
